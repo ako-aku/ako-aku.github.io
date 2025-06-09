@@ -1,2 +1,4 @@
-# -ako-aku.github.io
-my portfolio website, hopefully it won't crash...
+# MY PORTFOLIO WEBSITE
+[scary link](ako-aku.github.io)
+# 
+hopefully it won't crash...
