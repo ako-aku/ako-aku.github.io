@@ -1,0 +1,365 @@
+@font-face { font-family: 'Athelas'; src: url('/fonts/Athelas-Regular.ttf'); }
+@font-face { font-family: 'Athelas-I'; src: url('/fonts/Athelas-Italic.ttf'); }
+@font-face { font-family: 'HelveticaNeue'; src: url('/fonts/HelveticaNeue.otf'); }
+
+*,
+*::after,
+*::before
+{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: 'Athelas';
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent;
+  -webkit-text-size-adjust: 100%;
+
+  overflow: hidden;
+  touch-action: none;
+  -webkit-overflow-scrolling: auto;
+}
+
+::-moz-selection
+{
+  color: black;
+  background: white;
+}
+
+::selection
+{
+  color: black;
+  background: white;
+}
+
+section
+{
+    width: 100vw;
+    height: 100vh;
+}
+
+section::before
+{
+  content: "";
+  position: absolute;
+  inset: 0;
+  /*border: 10px solid #ef243a;*/
+  border: 10px solid white;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.blades
+{
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  opacity: 1;
+  display: block;
+}
+
+img, a
+{
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+blockquote
+{
+    quotes: none;
+}
+
+.home
+{
+    position: relative;
+}
+
+.home_header
+{
+    position: absolute;
+    top: 2.13333vh;
+    left: 3.199995vh;
+    display: block;
+    z-index: 10;
+    mix-blend-mode: difference;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.home_header h1
+{
+    font-family: 'HelveticaNeue';
+    font-size: 80pt;
+    /*color: #ef243a;*/
+    color: white;
+    transition: opacity 0.5s;
+}
+
+h1.fading
+{
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+#me
+{
+  transition: opacity 0.6s;
+  opacity: 1;
+}
+
+#me.fading
+{
+  opacity: 0;
+}
+
+.home_soul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    cursor: none;
+}
+
+.soul
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 769px) { .home_header { top: 24px; left: 24px; } .home_header h1 { font-size: 40pt; } }
+@media screen and (max-width: 310px) { .home_header { top: 15px; left: 15px; } .home_header h1 { font-size: 20pt; } }
+@media screen and (max-height: 365px) { .home_header { top: 24px; left: 24px; } .home_header h1 { font-size: 40pt; } }
+@media screen and (max-height: 215px) { .home_header { top: 15px; left: 15px; } .home_header h1 { font-size: 20pt; } }
+@media screen and (max-height: 65px) { .home_header { top: 7.5px; left: 7.5px; } .home_header h1 { font-size: 10pt; } }
+@media screen and (max-height: 35px) { .home_header { top: 3.75px; left: 3.75px; } .home_header h1 { font-size: 5pt; } }
+
+html.invert-colors
+{
+  filter: grayscale(1) contrast(20) brightness(1);
+  transition: filter 0.7s ease;
+}
+
+.fade-overlay
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease;
+  z-index: 9999;
+}
+
+.fade-overlay.visible
+{
+  opacity: 1;
+}
+
+.useless
+{
+    background-color: black;
+    color: white;
+}
+
+.paranoia
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fear
+{
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    z-index: 10;
+    mix-blend-mode: difference;*/
+    position: absolute;
+    /*top: 2.13333vh;
+    left: 2.13333vh;*/
+    display: block;
+    z-index: 10;
+    mix-blend-mode: difference;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.fear a
+{
+    cursor: pointer;
+    font-family: 'Athelas';
+    font-size: 80pt;
+    color: white;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.paranoia_soul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    cursor: none;
+}
+
+.no_soul
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 1200px) { .fear a { font-size: 60pt; } }
+@media screen and (max-width: 900px) { .fear a { font-size: 30pt; } }
+@media screen and (max-width: 500px) { .fear a { font-size: 15pt; } }
+@media screen and (max-width: 240px) { .fear a { font-size: 10pt; } }
+
+.profile-section
+{
+    width: 100%;
+    min-height: 100svh;
+    color: white;
+    font-family: 'Athelas';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    isolation: isolate;
+    background-color: black;
+    padding: 10px;
+}
+
+.profile-scrollable
+{
+    min-height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-main
+{
+    padding: 2.5vw 3vw 2vw 3vw;
+    font-size: clamp(1.1rem, 2.2vw, 2rem);
+    line-height: 1.32;
+    text-align: left;
+    word-break: break-word;
+    box-sizing: border-box;
+    max-width: 100vw;
+    overflow-wrap: break-word;
+}
+
+.profile-aside-row
+{
+    display: flex;
+    width: 100%;
+    background: none;
+    box-sizing: border-box;
+    justify-content: stretch;
+    align-items: stretch;
+    gap: 0;
+    border-top: 1.5px solid white;
+}
+
+.profile-aside-block
+{
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 1.5vw 1vw;
+    font-size: clamp(1rem, 1.1vw, 1.18rem);
+    text-align: left;
+    word-break: break-word;
+    background: none;
+    box-sizing: border-box;
+    white-space: pre-line;
+    border-right: 1.5px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.profile-aside-block > * {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.profile-aside-block:last-child
+{
+    border-right: none;
+}
+
+.profile-aside-block strong
+{
+    display: inline-block;
+    font-size: 1.13em;
+    margin-bottom: 0.18em;
+    letter-spacing: 0.07em;
+    color: white;
+}
+
+@media (max-width: 700px)
+{
+    .profile-main
+    {
+        font-size: 0.97rem;
+        padding: 5vw 1vw 3vw 1vw;
+        max-width: 100vw;
+    }
+
+    .profile-aside-row
+    {
+        flex-direction: column;
+        align-items: stretch;
+        border-top: 1.5px solid white;
+    }
+
+    .profile-aside-block
+    {
+        border-right: none;
+        border-bottom: 1.5px solid white;
+        width: 100%;
+        min-width: 0;
+        max-width: 100vw;
+        padding: 4vw 2vw;
+        font-size: 0.97rem;
+        overflow: visible;
+    }
+
+    .profile-aside-block:last-child
+    {
+        border-bottom: none;
+    }
+}
